@@ -11,6 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PagesController@index'); // index
+
+Route::get('new-post', 'PagesController@newpost'); // add new post
+Route::post('new-post', 'PagesController@savepost'); // savepost post
+
+Route::get('show-post/{id}', 'PagesController@showpost'); // see one post
+Route::post('show-post/{id}', 'PagesController@savecomment'); // save comment for post
+Route::get('show-comm/{id}', 'PagesController@showcomment'); // see one post
+
+Route::get('edit-post/{id}', 'PagesController@editpost'); // edit post
+Route::post('edit-post/{id}', 'PagesController@saveeditpost'); // edit post
